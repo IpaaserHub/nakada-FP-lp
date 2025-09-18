@@ -1,0 +1,2199 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お金は幸せのチケット｜仲田亮平FP - 我慢しない家計で、未来に希望を</title>
+    <meta name="description" content="日本一優しい寄り添いファイナンシャルプランナー「りょうちゃん」が、家計のムダを責めずに整え、浮いたお金を上手に投資へ回す仕組み化まで伴走。小中学生のお子さんがいる40代女性の将来資金の不安を希望に変えます。">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #10B981;
+            --secondary-color: #F59E0B;
+            --dark-color: #1F2937;
+            --light-color: #FFFFFF;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-600: #6B7280;
+            --gradient-primary: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            --gradient-secondary: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+            --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .header.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .logo i {
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
+
+        .header-cta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--gradient-primary);
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #F0FDF4 0%, #ECFDF5 50%, #F0F9FF 100%);
+            display: flex;
+            align-items: center;
+            padding: 6rem 5% 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -20%;
+            width: 40%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        .hero-content {
+            padding: 2rem 0;
+        }
+
+        .hero-image-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* PC用画像の調整 */
+        @media (min-width: 1024px) {
+            .hero-image-container {
+                max-width: 900px;
+            }
+        }
+
+        /* タブレット用画像の調整 */
+        @media (min-width: 769px) and (max-width: 1023px) {
+            .hero-image-container {
+                max-width: 700px;
+            }
+        }
+
+        /* モバイル用画像の調整 */
+        @media (max-width: 768px) {
+            .hero-image-container {
+                max-width: 500px;
+            }
+        }
+
+        .hero-main-image {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: var(--shadow-soft);
+            display: block;
+        }
+
+        .hero-cta-section {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .hero-image-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: var(--gradient-primary);
+            color: white;
+            text-decoration: none;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .hero-image-cta:hover::before {
+            left: 100%;
+        }
+
+        .hero-image-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(16, 185, 129, 0.6);
+        }
+
+        .hero-image-cta i {
+            font-size: 1.2rem;
+        }
+
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0.4;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--dark-color) 0%, var(--primary-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-credentials {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .credential-badge {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.2rem;
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .value-proposition {
+            background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .value-proposition h3 {
+            color: var(--dark-color);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .value-proposition p {
+            color: var(--dark-color);
+            margin: 0;
+            font-weight: 500;
+        }
+
+
+        /* Credentials Section */
+        .credentials {
+            padding: 6rem 5%;
+        }
+
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .credential-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            opacity: 0.4;
+            transform: translateY(20px);
+        }
+
+        .credential-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .credential-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+
+        .credential-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .credential-number {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .credential-label {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+
+        .credential-card p {
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        .video-introduction {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-soft);
+            text-align: center;
+            margin-bottom: 3rem;
+            opacity: 0.4;
+            transform: translateY(30px);
+            transition: all 0.5s ease;
+        }
+
+        .video-introduction.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .video-introduction h3 {
+            font-size: 1.8rem;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .video-introduction p {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+        }
+
+        .philosophy {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-soft);
+            text-align: center;
+            border-left: 5px solid var(--secondary-color);
+            opacity: 0.4;
+            transform: translateY(30px);
+            transition: all 0.5s ease;
+        }
+
+        .philosophy.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .philosophy h3 {
+            font-size: 1.8rem;
+            color: var(--dark-color);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .philosophy p {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Problem Section */
+        .problem {
+            padding: 6rem 5%;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+        }
+
+        /* セクション別の背景色とコンテナ設定 */
+        .hero {
+            background: linear-gradient(135deg, #F0FDF4 0%, #ECFDF5 50%, #F0F9FF 100%);
+        }
+
+        .hero .container {
+            background: transparent;
+            box-shadow: none;
+        }
+
+        .credentials {
+            background: #F8F9FA;
+        }
+
+        .problem {
+            background: #FFFFFF;
+        }
+
+        .features {
+            background: #F8F9FA;
+        }
+
+        .benefits {
+            background: #FFFFFF;
+        }
+
+        .testimonials {
+            background: #F8F9FA;
+        }
+
+        .cta-section {
+            background: var(--gradient-primary);
+        }
+
+        .cta-section .container {
+            background: transparent;
+            box-shadow: none;
+        }
+
+        .legal-notice {
+            background: #F3F4F6;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            opacity: 0.4;
+        }
+
+        .section-header.visible {
+            opacity: 1;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+        }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .problem-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-soft);
+            text-align: center;
+            transition: all 0.3s ease;
+            opacity: 0.4;
+            transform: translateY(20px);
+        }
+
+        .problem-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .problem-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .problem-card i {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .problem-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+
+        .problem-card p {
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 5%;
+        }
+
+        .feature-section {
+            margin-bottom: 4rem;
+            opacity: 0.4;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .feature-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .feature-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            padding: 3rem 0;
+        }
+
+        .feature-section.reverse .feature-content {
+            direction: rtl;
+        }
+
+        .feature-section.reverse .feature-text {
+            direction: ltr;
+        }
+
+        .feature-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .feature-visual {
+            width: 300px;
+            height: 250px;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.05) 100%);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .visual-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Analysis Visual */
+        .visual-elements {
+            display: flex;
+            align-items: end;
+            gap: 0.5rem;
+            height: 100px;
+        }
+
+        .chart-bar {
+            width: 20px;
+            background: var(--gradient-primary);
+            border-radius: 10px 10px 0 0;
+            animation: chart-grow 2s ease-in-out infinite;
+        }
+
+        .chart-bar:nth-child(2) { animation-delay: 0.2s; }
+        .chart-bar:nth-child(3) { animation-delay: 0.4s; }
+        .chart-bar:nth-child(4) { animation-delay: 0.6s; }
+
+        /* Steps Visual */
+        .step-path {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .step-point {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--gray-200);
+            position: relative;
+        }
+
+        .step-point.active {
+            background: var(--primary-color);
+        }
+
+        .step-point.current {
+            background: var(--secondary-color);
+            animation: pulse-current 2s ease-in-out infinite;
+        }
+
+        .step-line {
+            width: 30px;
+            height: 2px;
+            background: var(--gray-200);
+        }
+
+        /* Investment Visual */
+        .investment-growth {
+            position: relative;
+            width: 200px;
+            height: 120px;
+        }
+
+        .growth-line {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient-primary);
+            transform: rotate(15deg);
+            transform-origin: left bottom;
+        }
+
+        .growth-points {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .growth-point {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            animation: growth-pulse 3s ease-in-out infinite;
+        }
+
+        .growth-point:nth-child(2) { animation-delay: 0.5s; }
+        .growth-point:nth-child(3) { animation-delay: 1s; }
+        .growth-point:nth-child(4) { animation-delay: 1.5s; }
+
+        /* Goal Visual */
+        .goal-target {
+            text-align: center;
+        }
+
+        .target-circle {
+            width: 150px;
+            height: 150px;
+            border: 5px solid var(--primary-color);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            position: relative;
+            animation: target-rotate 4s linear infinite;
+        }
+
+        .target-circle::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+        }
+
+        .target-amount {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .achievement-stars span {
+            font-size: 1.5rem;
+            margin: 0 0.2rem;
+            animation: star-twinkle 2s ease-in-out infinite;
+        }
+
+        .achievement-stars span:nth-child(2) { animation-delay: 0.3s; }
+        .achievement-stars span:nth-child(3) { animation-delay: 0.6s; }
+
+        /* Feature Text */
+        .feature-text {
+            padding: 2rem 0;
+        }
+
+        .feature-badge {
+            background: var(--gradient-secondary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .feature-text h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+
+        .feature-text p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--gray-600);
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-benefits {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .feature-benefits li {
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+
+        /* Animations */
+        @keyframes chart-grow {
+            0%, 100% { transform: scaleY(1); }
+            50% { transform: scaleY(1.2); }
+        }
+
+        @keyframes pulse-current {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+        }
+
+        @keyframes growth-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.5); }
+        }
+
+        @keyframes target-rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes star-twinkle {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 6rem 5%;
+        }
+
+        .benefits-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .benefits-visual {
+            position: relative;
+        }
+
+        .benefit-chart {
+            background: var(--gradient-primary);
+            border-radius: 20px;
+            padding: 2rem;
+            color: white;
+            text-align: center;
+            box-shadow: var(--shadow-soft);
+            transform: rotate(-3deg);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-chart:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+
+        .chart-value {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .chart-label {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .benefits-list {
+            list-style: none;
+        }
+
+        .benefits-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            opacity: 0.4;
+            transform: translateX(-20px);
+            transition: all 0.5s ease;
+        }
+
+        .benefits-list li.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .benefits-list li i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-right: 1rem;
+            margin-top: 0.2rem;
+        }
+
+        .benefits-list li div h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+        }
+
+        .benefits-list li div p {
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 6rem 5%;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 0;
+            border-radius: 20px;
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            opacity: 0.4;
+            transform: scale(0.95);
+            transition: all 0.5s ease;
+            overflow: hidden;
+            border: 1px solid var(--gray-200);
+        }
+
+        .testimonial-card.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .testimonial-header {
+            background: linear-gradient(135deg, var(--gray-100) 0%, #ffffff 100%);
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .testimonial-avatar {
+            flex-shrink: 0;
+        }
+
+        .avatar-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border: 3px solid white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .avatar-circle.woman-1 {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+        }
+
+        .avatar-circle.woman-2 {
+            background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+        }
+
+        .avatar-circle.woman-3 {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+        }
+
+        .avatar-emoji {
+            font-size: 1.8rem;
+        }
+
+        .testimonial-info {
+            flex: 1;
+        }
+
+        .testimonial-info h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 0.3rem;
+        }
+
+        .testimonial-info p {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            margin-bottom: 0.3rem;
+        }
+
+        .testimonial-period {
+            font-size: 0.8rem;
+            color: var(--primary-color);
+            font-weight: 500;
+            background: rgba(16, 185, 129, 0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        .testimonial-stars {
+            color: var(--secondary-color);
+            font-size: 1rem;
+        }
+
+        .testimonial-content {
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .quote-mark {
+            position: absolute;
+            top: -5px;
+            left: 1rem;
+            font-size: 4rem;
+            color: var(--primary-color);
+            opacity: 0.2;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        .testimonial-content p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--dark-color);
+            margin: 0;
+            padding-left: 1rem;
+        }
+
+        .testimonial-content strong {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .testimonial-result {
+            padding: 1rem 1.5rem;
+            background: var(--gray-100);
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .result-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .result-number {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.2rem;
+        }
+
+        .result-label {
+            font-size: 0.8rem;
+            color: var(--gray-600);
+            font-weight: 500;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 5%;
+            color: white;
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            opacity: 0.4;
+        }
+
+        .cta-content h2.visible {
+            opacity: 1;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+
+        .cta-button-large {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .cta-button-large:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .cta-button-large i {
+            font-size: 1.5rem;
+        }
+
+        /* Legal Notice */
+        .legal-notice {
+            padding: 4rem 5%;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .legal-notice h3 {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 3rem;
+        }
+
+        .legal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .legal-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .legal-item dt {
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid var(--gray-200);
+            padding-bottom: 0.5rem;
+        }
+
+        .legal-item dd {
+            color: var(--dark-color);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 3rem 5% 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .footer p {
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 1rem;
+            margin-top: 2rem;
+            opacity: 0.6;
+        }
+
+        /* Sticky CTA */
+        .sticky-cta {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1001;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .sticky-cta.visible {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .sticky-cta .cta-button {
+            position: relative;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            background: var(--gradient-secondary);
+            box-shadow: 0 5px 25px rgba(245, 158, 11, 0.4);
+            transition: all 0.3s ease;
+            animation: gentle-pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes gentle-pulse {
+            0%, 100% { 
+                transform: scale(1);
+                box-shadow: 0 5px 25px rgba(245, 158, 11, 0.4);
+            }
+            50% { 
+                transform: scale(1.01);
+                box-shadow: 0 6px 30px rgba(245, 158, 11, 0.5);
+            }
+        }
+
+        .sticky-cta .cta-button:hover {
+            animation: none;
+            transform: scale(1.03) !important;
+            box-shadow: 0 8px 35px rgba(245, 158, 11, 0.7) !important;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            /* モバイルではフルワイド表示 */
+            .container {
+                max-width: none;
+                margin: 0;
+                background: transparent;
+                box-shadow: none;
+                padding: 0 4%;
+            }
+            /* Header improvements */
+            .header-content {
+                padding: 0.75rem 4%;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .logo {
+                font-size: 1rem;
+                flex: 1;
+                min-width: 0;
+            }
+
+            .logo i {
+                font-size: 1.2rem;
+            }
+
+            .header-cta .cta-button {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            /* Hero section improvements */
+            .hero {
+                min-height: 100vh;
+                padding: 5rem 4% 3rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .hero-text h1 {
+                font-size: 1.8rem;
+                line-height: 1.3;
+                margin-bottom: 1rem;
+            }
+
+            .hero-credentials {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .credential-badge {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+                font-weight: 600;
+                white-space: nowrap;
+                min-width: fit-content;
+                background: var(--gradient-primary);
+                box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+            }
+
+            .value-proposition {
+                padding: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .value-proposition h3 {
+                font-size: 1.1rem;
+            }
+
+            .value-proposition p {
+                font-size: 0.9rem;
+            }
+
+            .hero-text .subtitle {
+                font-size: 1rem;
+                line-height: 1.6;
+                margin-bottom: 1.5rem;
+            }
+
+            .cta-button-large {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+                width: 100%;
+                max-width: 300px;
+            }
+
+            /* Hero mobile adjustments */
+            .hero-image-container {
+                max-width: 100%;
+                margin: 0;
+            }
+
+            .hero-main-image {
+                border-radius: 10px;
+            }
+
+            .hero-cta-section {
+                margin-top: 1.5rem;
+            }
+
+            .hero-image-cta {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+                width: 90%;
+                max-width: 350px;
+            }
+
+            /* General section improvements */
+            .hero, .credentials, .problem, .features, .benefits, .testimonials, .cta-section {
+                padding: 3rem 4%;
+            }
+
+            .section-header {
+                margin-bottom: 2.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.6rem;
+                line-height: 1.3;
+            }
+
+            .section-header p {
+                font-size: 1rem;
+            }
+
+            /* Credentials section mobile */
+            .credentials-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .credential-number {
+                font-size: 3rem;
+            }
+
+            .credential-label {
+                font-size: 1.1rem;
+            }
+
+            /* Video section mobile */
+            .video-introduction {
+                padding: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .video-introduction h3 {
+                font-size: 1.4rem;
+            }
+
+            .video-introduction p {
+                font-size: 1rem;
+            }
+
+            /* Philosophy section mobile */
+            .philosophy {
+                padding: 2rem;
+            }
+
+            .philosophy h3 {
+                font-size: 1.4rem;
+            }
+
+            .philosophy p {
+                font-size: 1rem;
+            }
+
+            /* Problem cards mobile */
+            .problems-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            /* Features section mobile */
+            /* Features mobile layout */
+            .feature-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .feature-section.reverse .feature-content {
+                direction: ltr;
+            }
+
+            .feature-visual {
+                width: 250px;
+                height: 200px;
+            }
+
+            .feature-text h3 {
+                font-size: 1.4rem;
+            }
+
+            .feature-text p {
+                font-size: 1rem;
+            }
+
+            .feature-card h3 {
+                font-size: 1.2rem;
+            }
+
+            /* Benefits section mobile */
+            .benefits-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .benefit-chart {
+                margin-bottom: 2rem;
+            }
+
+            .chart-value {
+                font-size: 2.5rem;
+            }
+
+            /* Testimonials mobile */
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .testimonial-card {
+                padding: 1.5rem;
+            }
+
+            /* CTA section mobile */
+            .cta-content h2 {
+                font-size: 1.6rem;
+                line-height: 1.3;
+            }
+
+            .cta-content p {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            /* Legal notice mobile */
+            .legal-notice {
+                padding: 3rem 4%;
+            }
+
+            .legal-notice h3 {
+                font-size: 1.4rem;
+                margin-bottom: 2rem;
+            }
+
+            .legal-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .legal-item {
+                padding: 1rem;
+            }
+
+            /* Sticky CTA mobile */
+            .sticky-cta {
+                left: 15px;
+                right: 15px;
+                bottom: 15px;
+                transform: translateY(0);
+            }
+            
+            .sticky-cta.visible {
+                transform: translateY(0);
+            }
+
+            .sticky-cta .cta-button {
+                width: 100%;
+                justify-content: center;
+                padding: 1rem;
+                font-size: 1rem;
+            }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 480px) {
+            .hero {
+                padding: 4rem 3% 2rem;
+            }
+
+            .hero-text h1 {
+                font-size: 1.6rem;
+            }
+
+            .hero-credentials {
+                gap: 0.4rem;
+            }
+
+            .credential-badge {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.8rem;
+                border-radius: 20px;
+            }
+
+            .section-header h2 {
+                font-size: 1.4rem;
+            }
+
+            .cta-content h2 {
+                font-size: 1.4rem;
+            }
+
+            .hero, .credentials, .problem, .features, .benefits, .testimonials, .cta-section {
+                padding: 2.5rem 3%;
+            }
+
+            .credential-card, .feature-card, .testimonial-card, .video-introduction, .philosophy {
+                padding: 1.5rem;
+            }
+
+            .hero-cta-section {
+                margin-top: 1rem;
+            }
+
+            .hero-image-cta {
+                padding: 0.9rem 1.5rem;
+                font-size: 0.9rem;
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-content">
+            <a href="#" class="logo">
+                <i class="fas fa-ticket-alt"></i>
+                お金は幸せのチケット｜仲田亮平FP
+            </a>
+            <div class="header-cta">
+                <a href="https://line.me/R/ti/p/@570cpksz" class="cta-button" target="_blank">
+                    <i class="fab fa-line"></i>
+                    LINEで相談予約
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-image-container">
+                    <picture>
+                        <source media="(min-width: 1024px)" srcset="PC用我慢しない家計で、未来に希望を。.png">
+                        <source media="(min-width: 769px)" srcset="タブレット用我慢しない家計で、未来に希望を。.png">
+                        <source media="(max-width: 768px)" srcset="我慢しない家計で、未来に希望を。.png">
+                        <img src="我慢しない家計で、未来に希望を。.png" alt="我慢しない家計で、未来に希望を - お金を幸せのチケットに変える資産運用 個別相談会" class="hero-main-image">
+                    </picture>
+                </div>
+                <div class="hero-cta-section">
+                    <a href="https://line.me/R/ti/p/@570cpksz" class="hero-image-cta" target="_blank">
+                        <i class="fab fa-line"></i>
+                        今すぐLINEで個別相談を予約する
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credentials Section -->
+    <section class="credentials" id="credentials">
+        <div class="container">
+            <div class="section-header">
+                <h2>10年の実績に基づく確かなサポート</h2>
+                <p>投資歴10年・FP歴10年の経験で、あなたの資産形成を確実にサポートします</p>
+            </div>
+            <div class="credentials-grid">
+                <div class="credential-card">
+                    <div class="credential-number">10</div>
+                    <div class="credential-label">投資歴</div>
+                    <p>様々な市場環境を経験し、リスクを抑えた長期投資戦略を熟知</p>
+                </div>
+                <div class="credential-card">
+                    <div class="credential-number">10</div>
+                    <div class="credential-label">FP歴</div>
+                    <p>数百件の家計改善をサポートし、一人ひとりに最適なプランを提案</p>
+                </div>
+                <div class="credential-card">
+                    <div class="credential-number">2,000</div>
+                    <div class="credential-label">万円目標</div>
+                    <p>現実的で着実な資産形成プロセスで、夢の2,000万円を目指します</p>
+                </div>
+            </div>
+            
+            <!-- Video Introduction -->
+            <div class="video-introduction">
+                <h3>「りょうちゃん」からのメッセージ</h3>
+                <p>まずは2分で、私の想いをお聞きください</p>
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/R1obgu174o4" 
+                        title="仲田亮平（りょうちゃん）自己紹介動画" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+            
+            <div class="philosophy">
+                <h3>「お金は幸せのチケット」という信念</h3>
+                <p>
+                    お金の不安で自分自身や家族・子供に我慢をさせる人を救いたい。
+                    お金は、本来、私たちの人生を豊かにするための道具のはずです。
+                    家族との大切な思い出を作るための資金であり、子供たちの未来を切り開くための投資であり、
+                    自分自身の夢を叶えるための切符です。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem" id="problem">
+        <div class="container">
+            <div class="section-header">
+                <h2>こんなお悩みはありませんか？</h2>
+                <p>小中学生のお子さんがいる40代女性の多くが感じているお金の不安</p>
+            </div>
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>将来資金への漠然とした不安</h3>
+                    <p>教育費、住宅ローン、老後資金...必要な金額も準備方法も分からず、ただ不安だけが募る毎日。</p>
+                </div>
+                <div class="problem-card">
+                    <i class="fas fa-calculator"></i>
+                    <h3>家計管理が続かない</h3>
+                    <p>家計簿アプリを試しても三日坊主。夫に「また無駄遣いして」と責められるのが怖い。</p>
+                </div>
+                <div class="problem-card">
+                    <i class="fas fa-question-circle"></i>
+                    <h3>投資を始めたいけど怖い</h3>
+                    <p>NISAやiDeCoは気になるけれど、何から始めればいいか分からない。失敗したらどうしよう...</p>
+                </div>
+                <div class="problem-card">
+                    <i class="fas fa-user-times"></i>
+                    <h3>相談相手がいない</h3>
+                    <p>無料相談に行ったら保険ばかり勧められた。本当に親身になってくれる人はいないの？</p>
+                </div>
+                <div class="problem-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>忙しくて時間がない</h3>
+                    <p>仕事と家事育児で毎日がいっぱい。お金のことを考える時間も気力もない。</p>
+                </div>
+                <div class="problem-card">
+                    <i class="fas fa-ban"></i>
+                    <h3>自分へのご褒美に罪悪感</h3>
+                    <p>たまの外食や買い物も「無駄遣い」と感じてしまい、心から楽しめない。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>なぜ「我慢しない家計改善」が可能なのか？</h2>
+                <p>10年の実績で培った「責めない・急がせない・売り込まない」3つの約束</p>
+            </div>
+            
+            <div class="feature-section">
+                <div class="feature-content">
+                    <div class="feature-image">
+                        <div class="feature-visual analysis">
+                            <div class="visual-icon">📊</div>
+                            <div class="visual-elements">
+                                <div class="chart-bar" style="height: 60%;"></div>
+                                <div class="chart-bar" style="height: 80%;"></div>
+                                <div class="chart-bar" style="height: 45%;"></div>
+                                <div class="chart-bar" style="height: 95%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-text">
+                        <div class="feature-badge">STEP 1</div>
+                        <h3>【責めない】現状分析</h3>
+                        <p>「無駄遣いを責める」のではなく「仕組みの問題」として捉え、10年の経験で培った優しいアプローチで現状を見える化します。</p>
+                        <ul class="feature-benefits">
+                            <li>✅ 罪悪感を感じない家計分析</li>
+                            <li>✅ あなたの価値観を重視した見直し</li>
+                            <li>✅ 実現可能な改善プランの提案</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-section reverse">
+                <div class="feature-content">
+                    <div class="feature-text">
+                        <div class="feature-badge">STEP 2</div>
+                        <h3>【急がせない】段階的改善</h3>
+                        <p>急激な変化は続きません。あなたのペースに合わせて段階的に改善し、無理なく続けられる仕組みを一緒に作ります。</p>
+                        <ul class="feature-benefits">
+                            <li>✅ 月単位での小さな改善積み重ね</li>
+                            <li>✅ 生活スタイルを尊重した提案</li>
+                            <li>✅ 挫折しない継続サポート</li>
+                        </ul>
+                    </div>
+                    <div class="feature-image">
+                        <div class="feature-visual steps">
+                            <div class="visual-icon">📈</div>
+                            <div class="step-path">
+                                <div class="step-point active"></div>
+                                <div class="step-line"></div>
+                                <div class="step-point active"></div>
+                                <div class="step-line"></div>
+                                <div class="step-point current"></div>
+                                <div class="step-line"></div>
+                                <div class="step-point"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-section">
+                <div class="feature-content">
+                    <div class="feature-image">
+                        <div class="feature-visual investment">
+                            <div class="visual-icon">💰</div>
+                            <div class="investment-growth">
+                                <div class="growth-line"></div>
+                                <div class="growth-points">
+                                    <div class="growth-point" style="bottom: 20%;"></div>
+                                    <div class="growth-point" style="bottom: 35%;"></div>
+                                    <div class="growth-point" style="bottom: 55%;"></div>
+                                    <div class="growth-point" style="bottom: 80%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-text">
+                        <div class="feature-badge">STEP 3</div>
+                        <h3>【売り込まない】投資サポート</h3>
+                        <p>投資商品の売り込みは一切しません。10年の投資経験から、あなたに本当に合った方法だけを分かりやすくお伝えします。</p>
+                        <ul class="feature-benefits">
+                            <li>✅ 商品ありきでない中立的なアドバイス</li>
+                            <li>✅ リスク説明を最重視</li>
+                            <li>✅ 継続できる投資額の設定</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-section reverse">
+                <div class="feature-content">
+                    <div class="feature-text">
+                        <div class="feature-badge">GOAL</div>
+                        <h3>【2,000万円達成】継続伴走</h3>
+                        <p>「お金は幸せのチケット」の信念のもと、資産2,000万円達成まで寄り添い続けます。一人じゃないという安心感を大切にします。</p>
+                        <ul class="feature-benefits">
+                            <li>✅ 目標達成まで長期サポート</li>
+                            <li>✅ 心の支えとなるLINE相談</li>
+                            <li>✅ 人生の変化に応じた軌道修正</li>
+                        </ul>
+                    </div>
+                    <div class="feature-image">
+                        <div class="feature-visual goal">
+                            <div class="visual-icon">🎯</div>
+                            <div class="goal-target">
+                                <div class="target-circle"></div>
+                                <div class="target-amount">2,000万円</div>
+                                <div class="achievement-stars">
+                                    <span>⭐</span>
+                                    <span>⭐</span>
+                                    <span>⭐</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits" id="benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2>このようなメリットが得られます</h2>
+                <p>お客様の人生に起こる5つの嬉しい変化</p>
+            </div>
+            <div class="benefits-container">
+                <div class="benefits-visual">
+                    <div class="benefit-chart">
+                        <div class="chart-value">2,000万円</div>
+                        <div class="chart-label">目標資産額への<br>明確な道筋</div>
+                    </div>
+                </div>
+                <div class="benefits-content">
+                    <ul class="benefits-list">
+                        <li>
+                            <i class="fas fa-eye"></i>
+                            <div>
+                                <h4>将来への漠然とした不安が具体的な希望に</h4>
+                                <p>必要な金額と達成方法が見える化されることで、不安が安心感に変わります。</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-piggy-bank"></i>
+                            <div>
+                                <h4>家計のムダが整い、自分に使えるお金も増加</h4>
+                                <p>固定費見直しで月2-3万円の削減も可能。罪悪感な く自分へのご褒美も楽しめます。</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-graduation-cap"></i>
+                            <div>
+                                <h4>教育費・住宅・老後資金の具体的計画が完成</h4>
+                                <p>ライフプランシミュレーションで各ライフイベントの最短ルートが明確に。</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-chart-line"></i>
+                            <div>
+                                <h4>投資の始め方・続け方が仕組み化される</h4>
+                                <p>あなたに合った投資方法で、迷わず・焦らず資産形成を続けられます。</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-smile"></i>
+                            <div>
+                                <h4>優しい伴走で挫折せず前向きに継続</h4>
+                                <p>月1回の面談とLINEサポートで、一人じゃないという安心感を持てます。</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>お客様の声</h2>
+                <p>実際にサポートを受けられた方々からの喜びの声</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <div class="avatar-circle woman-1">
+                                <span class="avatar-emoji">👩</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>田中様（42歳・会社員）</h4>
+                            <p>中学生・小学生の2児の母</p>
+                            <div class="testimonial-period">サポート期間：4ヶ月</div>
+                        </div>
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="quote-mark">"</div>
+                        <p>保険やサブスクの見直しで<strong>月額3.2万円の削減</strong>に成功し、そのうち2万円を積立NISAで投資開始。りょうちゃんの『責めない』アプローチで、夫も協力的になりました。残り1.2万円は罪悪感なく自分のために使っています</p>
+                    </div>
+                    <div class="testimonial-result">
+                        <div class="result-item">
+                            <span class="result-number">3.2万円</span>
+                            <span class="result-label">月額削減</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-number">2万円</span>
+                            <span class="result-label">投資開始</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <div class="avatar-circle woman-2">
+                                <span class="avatar-emoji">👩‍💼</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>佐藤様（39歳・パート）</h4>
+                            <p>小学生の3児の母</p>
+                            <div class="testimonial-period">サポート期間：6ヶ月</div>
+                        </div>
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="quote-mark">"</div>
+                        <p>投資経験のない私でしたが、りょうちゃんがリスクを丁寧に説明してくれたおかげで、積立NISAで<strong>12万円が18万円に増加</strong>。教育費のシミュレーションで、子どもたちの将来に安心して投資できています</p>
+                    </div>
+                    <div class="testimonial-result">
+                        <div class="result-item">
+                            <span class="result-number">12→18万円</span>
+                            <span class="result-label">資産増加</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-number">6ヶ月</span>
+                            <span class="result-label">継続投資</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <div class="avatar-circle woman-3">
+                                <span class="avatar-emoji">👩‍💻</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>鈴木様（44歳・自営業）</h4>
+                            <p>中学生・高校生の2児の母</p>
+                            <div class="testimonial-period">サポート期間：1年</div>
+                        </div>
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="quote-mark">"</div>
+                        <p>他のFPさんは保険ばかり勧められましたが、りょうちゃんは<strong>売り込み零</strong>。現在の家計から逆算して、私たちに合った現実的なプランを作ってくれました。</p>
+                    </div>
+                    <div class="testimonial-result">
+                        <div class="result-item">
+                            <span class="result-number">2.5万円</span>
+                            <span class="result-label">月額節約</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-number">1.5万円</span>
+                            <span class="result-label">月額投資</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>「お金は幸せのチケット」を実感する第一歩を</h2>
+                <p>
+                    投資歴10年・FP歴10年の「りょうちゃん」が、あなたの資産2,000万円達成までを責めずに寄り添います。<br>
+                    <strong>友だち追加で限定公開【我慢しない家計改善3ステップ動画】をプレゼント！</strong><br>
+                    まずは、あなたの「本当に叶えたい未来」をお聞かせください。
+                </p>
+                <a href="https://line.me/R/ti/p/@570cpksz" class="cta-button-large" target="_blank">
+                    <i class="fab fa-line"></i>
+                    今すぐLINEで相談を予約する
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legal Notice -->
+    <section class="legal-notice">
+        <div class="container">
+            <h3>特定商取引法に基づく表記</h3>
+            <div class="legal-content">
+                <div class="legal-grid">
+                    <div class="legal-item">
+                        <dt>事業者名</dt>
+                        <dd>仲田亮平（個人事業主）</dd>
+                    </div>
+                    <div class="legal-item">
+                        <dt>所在地</dt>
+                        <dd>※お申し込み後にお知らせいたします</dd>
+                    </div>
+                    <div class="legal-item">
+                        <dt>電話番号</dt>
+                        <dd>※お申し込み後にお知らせいたします</dd>
+                    </div>
+                    <div class="legal-item">
+                        <dt>メールアドレス</dt>
+                        <dd>※お申し込み後にお知らせいたします</dd>
+                    </div>
+                    <div class="legal-item">
+                        <dt>サービス内容</dt>
+                        <dd>ファイナンシャルプランニング相談・資産形成コンサルティング</dd>
+                    </div>
+                    <div class="legal-item">
+                        <dt>料金</dt>
+                        <dd>初回相談無料、継続サポートは個別にご案内</dd>
+                    </div>
+                    <div class="legal-item">
+                        <dt>お支払い方法</dt>
+                        <dd>銀行振込、クレジットカード決済</dd>
+                    </div>
+                    <div class="legal-item">
+                        <dt>キャンセルポリシー</dt>
+                        <dd>相談日の24時間前まで変更・キャンセル可能</dd>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>お金は幸せのチケット｜仲田亮平FP</h3>
+            <p>あなたの「本当に叶えたいこと」から始める、優しい家計見直し</p>
+            <div class="footer-bottom">
+                <p>&copy; 2024 仲田亮平FP. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky CTA -->
+    <div class="sticky-cta" id="sticky-cta">
+        <a href="https://line.me/R/ti/p/@570cpksz" class="cta-button" target="_blank">
+            <i class="fab fa-line"></i>
+            今すぐLINEで相談を予約する
+        </a>
+    </div>
+
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -30px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // 一度アニメーションが実行されたら監視を停止（パフォーマンス向上）
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const animateElements = document.querySelectorAll(
+                '.section-header, .credential-card, .video-introduction, .philosophy, .problem-card, .feature-section, .benefits-list li, .testimonial-card, .cta-content h2'
+            );
+            
+            animateElements.forEach((el, index) => {
+                // セクション毎にディレイをリセット
+                const section = el.closest('section');
+                const sectionElements = section ? section.querySelectorAll('.section-header, .credential-card, .video-introduction, .philosophy, .problem-card, .feature-section, .benefits-list li, .testimonial-card, .cta-content h2') : [el];
+                const indexInSection = Array.from(sectionElements).indexOf(el);
+                el.style.transitionDelay = `${indexInSection * 0.1}s`;
+                observer.observe(el);
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            const stickyCTA = document.getElementById('sticky-cta');
+            
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+                stickyCTA.classList.add('visible');
+            } else {
+                header.classList.remove('scrolled');
+                stickyCTA.classList.remove('visible');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add hover effects to cards
+        document.querySelectorAll('.problem-card, .feature-card, .testimonial-card, .video-introduction').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Enhanced CTA button effects
+        document.querySelectorAll('.cta-button, .cta-button-large').forEach(button => {
+            button.addEventListener('click', function() {
+                // Add click animation
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+        });
+
+        // Lazy loading for better performance
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // Accessibility improvements
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Tab') {
+                document.body.classList.add('keyboard-navigation');
+            }
+        });
+
+        document.addEventListener('mousedown', function() {
+            document.body.classList.remove('keyboard-navigation');
+        });
+
+        // Performance optimization: Reduce animations on slower devices
+        const isSlowDevice = navigator.hardwareConcurrency < 4 || navigator.connection?.effectiveType === 'slow-2g';
+        
+        if (isSlowDevice) {
+            document.documentElement.style.setProperty('--animation-duration', '0.1s');
+        }
+    </script>
+</body>
+</html>
