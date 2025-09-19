@@ -1363,32 +1363,67 @@
             opacity: 0.8;
         }
 
-        /* フッター内特商法 */
-        .footer-legal {
+        /* フッター内特商法 - スクロールボックス */
+        .footer-legal-container {
             margin: 2rem 0;
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        .footer-legal h4 {
+        .footer-legal-container h4 {
             font-size: 1rem;
             margin-bottom: 1rem;
             color: var(--light-color);
             font-weight: 600;
+            text-align: left;
         }
 
-        .legal-compact {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
+        .legal-scroll-box {
+            max-height: 200px;
+            overflow-y: auto;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 1.5rem;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1);
         }
 
-        .legal-compact span {
+        /* WebKit scrollbar styling */
+        .legal-scroll-box::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .legal-scroll-box::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+        }
+
+        .legal-scroll-box::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 3px;
+        }
+
+        .legal-scroll-box::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .legal-content-text {
+            text-align: left;
+        }
+
+        .legal-content-text p {
+            margin: 0 0 0.8rem 0;
             font-size: 0.8rem;
-            opacity: 0.8;
-            line-height: 1.4;
+            line-height: 1.5;
+            opacity: 0.9;
+        }
+
+        .legal-content-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .legal-content-text strong {
+            color: var(--primary-color);
+            font-weight: 600;
         }
 
         .footer-bottom {
@@ -1692,17 +1727,22 @@
             }
 
             /* Footer legal mobile */
-            .footer-legal {
-                padding: 1rem;
+            .footer-legal-container {
                 margin: 1.5rem 0;
             }
             
-            .footer-legal h4 {
+            .footer-legal-container h4 {
                 font-size: 0.9rem;
             }
             
-            .legal-compact span {
+            .legal-scroll-box {
+                max-height: 150px;
+                padding: 1rem;
+            }
+            
+            .legal-content-text p {
                 font-size: 0.75rem;
+                margin-bottom: 0.6rem;
             }
 
             /* Sticky CTA mobile */
@@ -2173,15 +2213,21 @@
             <p>あなたの「本当に叶えたいこと」から始める、優しい家計見直し</p>
             
             <!-- 特定商取引法に基づく表記 -->
-            <div class="footer-legal">
+            <div class="footer-legal-container">
                 <h4>特定商取引法に基づく表記</h4>
-                <div class="legal-compact">
-                    <span>事業者：仲田亮平（個人事業主）</span>
-                    <span>サービス：ファイナンシャルプランニング相談・資産形成コンサルティング</span>
-                    <span>料金：初回相談無料、継続サポートは個別にご案内</span>
-                    <span>お支払い：銀行振込、クレジットカード決済</span>
-                    <span>キャンセル：相談日の24時間前まで変更・キャンセル可能</span>
-                    <span>※詳細情報はお申し込み後にお知らせいたします</span>
+                <div class="legal-scroll-box">
+                    <div class="legal-content-text">
+                        <p><strong>事業者名：</strong>仲田亮平（個人事業主）</p>
+                        <p><strong>所在地：</strong>※お申し込み後にお知らせいたします</p>
+                        <p><strong>電話番号：</strong>※お申し込み後にお知らせいたします</p>
+                        <p><strong>メールアドレス：</strong>※お申し込み後にお知らせいたします</p>
+                        <p><strong>サービス内容：</strong>ファイナンシャルプランニング相談・資産形成コンサルティング</p>
+                        <p><strong>料金：</strong>初回相談無料、継続サポートは個別にご案内</p>
+                        <p><strong>お支払い方法：</strong>銀行振込、クレジットカード決済</p>
+                        <p><strong>キャンセルポリシー：</strong>相談日の24時間前まで変更・キャンセル可能</p>
+                        <p><strong>注意事項：</strong>サービスの性質上、提供開始後の返品・返金はできかねます</p>
+                        <p><strong>お問い合わせ：</strong>詳細情報はお申し込み後にお知らせいたします</p>
+                    </div>
                 </div>
             </div>
             
