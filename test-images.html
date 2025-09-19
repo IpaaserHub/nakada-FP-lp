@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>画像表示テスト</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-section { margin: 20px 0; padding: 20px; border: 1px solid #ccc; }
+        img { max-width: 300px; height: auto; margin: 10px; border: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+    <h1>画像表示テスト</h1>
+    
+    <div class="test-section">
+        <h2>スマホ用画像</h2>
+        <img src="./素材/【責めない】現状分析.png" alt="責めない現状分析">
+        <img src="./素材/【急がせない】段階的改善.png" alt="急がせない段階的改善">
+        <img src="./素材/【売り込まない】投資サポート.png" alt="売り込まない投資サポート">
+        <img src="./素材/【2,000万円達成】継続伴走.png" alt="2,000万円達成継続伴走">
+    </div>
+    
+    <div class="test-section">
+        <h2>PC用画像</h2>
+        <img src="./素材/PC用【責めない】現状分析.png" alt="PC用責めない現状分析">
+        <img src="./素材/PC用【急がせない】段階的改善.png" alt="PC用急がせない段階的改善">
+        <img src="./素材/PC用【売り込まない】投資サポート.png" alt="PC用売り込まない投資サポート">
+        <img src="./素材/PC用【2,000万円達成】継続伴走.png" alt="PC用2,000万円達成継続伴走">
+    </div>
+    
+    <div class="test-section">
+        <h2>タブレット用画像</h2>
+        <img src="./素材/タブレット用【責めない】現状分析.png" alt="タブレット用責めない現状分析">
+        <img src="./素材/タブレット用【急がせない】段階的改善.png" alt="タブレット用急がせない段階的改善">
+        <img src="./素材/タブレット用【売り込まない】投資サポート.png" alt="タブレット用売り込まない投資サポート">
+        <img src="./素材/タブレット用【2,000万円達成】継続伴走.png" alt="タブレット用2,000万円達成継続伴走">
+    </div>
+    
+    <div class="test-section">
+        <h2>Picture要素テスト</h2>
+        <picture>
+            <source media="(min-width: 1024px)" srcset="./素材/PC用【責めない】現状分析.png">
+            <source media="(min-width: 769px)" srcset="./素材/タブレット用【責めない】現状分析.png">
+            <img src="./素材/【責めない】現状分析.png" alt="責めない現状分析" style="max-width: 300px;">
+        </picture>
+    </div>
+</body>
+</html>

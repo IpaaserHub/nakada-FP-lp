@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>シンプル画像テスト</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            padding: 20px; 
+            background: #f0f0f0; 
+        }
+        .test { 
+            margin: 20px 0; 
+            padding: 20px; 
+            background: white; 
+            border-radius: 10px; 
+        }
+        img { 
+            max-width: 200px; 
+            height: auto; 
+            margin: 10px; 
+            border: 3px solid #ddd; 
+            display: block;
+        }
+        .success { border-color: green !important; }
+        .error { 
+            border-color: red !important; 
+            background: #ffe6e6;
+        }
+        .info {
+            background: #e6f3ff;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 画像表示テスト（シンプル版）</h1>
+    
+    <div class="info">
+        <strong>現在の状況:</strong><br>
+        URL: <span id="current-url"></span><br>
+        時刻: <span id="current-time"></span>
+    </div>
+    
+    <div class="test">
+        <h2>🖼️ 英語ファイル名テスト</h2>
+        
+        <h3>STEP 1</h3>
+        <img src="./素材/step1-mobile.png" alt="Step 1" onload="this.className='success'" onerror="this.className='error'; console.error('Failed to load:', this.src)">
+        <p>パス: ./素材/step1-mobile.png</p>
+        
+        <h3>STEP 2</h3>
+        <img src="./素材/step2-mobile.png" alt="Step 2" onload="this.className='success'" onerror="this.className='error'; console.error('Failed to load:', this.src)">
+        <p>パス: ./素材/step2-mobile.png</p>
+        
+        <h3>STEP 3</h3>
+        <img src="./素材/step3-mobile.png" alt="Step 3" onload="this.className='success'" onerror="this.className='error'; console.error('Failed to load:', this.src)">
+        <p>パス: ./素材/step3-mobile.png</p>
+        
+        <h3>GOAL</h3>
+        <img src="./素材/goal-mobile.png" alt="Goal" onload="this.className='success'" onerror="this.className='error'; console.error('Failed to load:', this.src)">
+        <p>パス: ./素材/goal-mobile.png</p>
+    </div>
+    
+    <div class="test">
+        <h2>📁 フォルダなしテスト</h2>
+        
+        <h3>STEP 1（フォルダなし）</h3>
+        <img src="step1-mobile.png" alt="Step 1 No Folder" onload="this.className='success'" onerror="this.className='error'; console.error('Failed to load:', this.src)">
+        <p>パス: step1-mobile.png</p>
+    </div>
+    
+    <script>
+        document.getElementById('current-url').textContent = window.location.href;
+        document.getElementById('current-time').textContent = new Date().toLocaleString();
+        
+        // ページ読み込み後の詳細チェック
+        window.onload = function() {
+            console.log('=== 画像テスト開始 ===');
+            console.log('現在のURL:', window.location.href);
+            console.log('ベースURL:', window.location.origin + window.location.pathname.replace('/simple-test.html', ''));
+            
+            // 5秒後に結果をまとめて表示
+            setTimeout(() => {
+                const images = document.querySelectorAll('img');
+                let success = 0, error = 0;
+                images.forEach((img, index) => {
+                    if (img.className === 'success') {
+                        success++;
+                        console.log(`✅ 画像${index + 1}: 成功 - ${img.src}`);
+                    } else {
+                        error++;
+                        console.log(`❌ 画像${index + 1}: 失敗 - ${img.src}`);
+                    }
+                });
+                console.log(`=== 結果: 成功${success}個, 失敗${error}個 ===`);
+            }, 5000);
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>画像デバッグ</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f0f0f0; }
+        .test-section { margin: 20px 0; padding: 20px; background: white; border-radius: 10px; }
+        .image-test { margin: 10px 0; padding: 10px; border: 1px solid #ddd; }
+        img { max-width: 200px; height: auto; margin: 5px; border: 2px solid #ccc; }
+        .error { border-color: red !important; }
+        .success { border-color: green !important; }
+    </style>
+    <script>
+        function checkImages() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.onload = () => {
+                    img.classList.add('success');
+                    img.classList.remove('error');
+                };
+                img.onerror = () => {
+                    img.classList.add('error');
+                    img.classList.remove('success');
+                    console.error('画像の読み込みに失敗:', img.src);
+                };
+            });
+        }
+        window.onload = checkImages;
+    </script>
+</head>
+<body>
+    <h1>🔍 画像表示デバッグ</h1>
+    <p>緑の枠: 正常に読み込まれた画像<br>赤の枠: 読み込みに失敗した画像</p>
+    
+    <div class="test-section">
+        <h2>📱 スマホ用画像</h2>
+        <div class="image-test">
+            <p><strong>STEP 1:</strong> ./素材/【責めない】現状分析.png</p>
+            <img src="./素材/【責めない】現状分析.png" alt="STEP1">
+        </div>
+        <div class="image-test">
+            <p><strong>STEP 2:</strong> ./素材/【急がせない】段階的改善.png</p>
+            <img src="./素材/【急がせない】段階的改善.png" alt="STEP2">
+        </div>
+        <div class="image-test">
+            <p><strong>STEP 3:</strong> ./素材/【売り込まない】投資サポート.png</p>
+            <img src="./素材/【売り込まない】投資サポート.png" alt="STEP3">
+        </div>
+        <div class="image-test">
+            <p><strong>GOAL:</strong> ./素材/【2,000万円達成】継続伴走.png</p>
+            <img src="./素材/【2,000万円達成】継続伴走.png" alt="GOAL">
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>💻 PC用画像</h2>
+        <div class="image-test">
+            <p><strong>PC STEP 1:</strong> ./素材/PC用【責めない】現状分析.png</p>
+            <img src="./素材/PC用【責めない】現状分析.png" alt="PC STEP1">
+        </div>
+        <div class="image-test">
+            <p><strong>PC STEP 2:</strong> ./素材/PC用【急がせない】段階的改善.png</p>
+            <img src="./素材/PC用【急がせない】段階的改善.png" alt="PC STEP2">
+        </div>
+        <div class="image-test">
+            <p><strong>PC STEP 3:</strong> ./素材/PC用【売り込まない】投資サポート.png</p>
+            <img src="./素材/PC用【売り込まない】投資サポート.png" alt="PC STEP3">
+        </div>
+        <div class="image-test">
+            <p><strong>PC GOAL:</strong> ./素材/PC用【2,000万円達成】継続伴走.png</p>
+            <img src="./素材/PC用【2,000万円達成】継続伴走.png" alt="PC GOAL">
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>📱 タブレット用画像</h2>
+        <div class="image-test">
+            <p><strong>Tablet STEP 1:</strong> ./素材/タブレット用【責めない】現状分析.png</p>
+            <img src="./素材/タブレット用【責めない】現状分析.png" alt="Tablet STEP1">
+        </div>
+        <div class="image-test">
+            <p><strong>Tablet STEP 2:</strong> ./素材/タブレット用【急がせない】段階的改善.png</p>
+            <img src="./素材/タブレット用【急がせない】段階的改善.png" alt="Tablet STEP2">
+        </div>
+        <div class="image-test">
+            <p><strong>Tablet STEP 3:</strong> ./素材/タブレット用【売り込まない】投資サポート.png</p>
+            <img src="./素材/タブレット用【売り込まない】投資サポート.png" alt="Tablet STEP3">
+        </div>
+        <div class="image-test">
+            <p><strong>Tablet GOAL:</strong> ./素材/タブレット用【2,000万円達成】継続伴走.png</p>
+            <img src="./素材/タブレット用【2,000万円達成】継続伴走.png" alt="Tablet GOAL">
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>🖼️ Picture要素テスト</h2>
+        <div class="image-test">
+            <p><strong>レスポンシブ画像:</strong></p>
+            <picture>
+                <source media="(min-width: 1024px)" srcset="./素材/PC用【責めない】現状分析.png">
+                <source media="(min-width: 769px)" srcset="./素材/タブレット用【責めない】現状分析.png">
+                <img src="./素材/【責めない】現状分析.png" alt="レスポンシブ" style="max-width: 200px;">
+            </picture>
+        </div>
+    </div>
+</body>
+</html>
