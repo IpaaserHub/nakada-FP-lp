@@ -1363,6 +1363,34 @@
             opacity: 0.8;
         }
 
+        /* フッター内特商法 */
+        .footer-legal {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .footer-legal h4 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--light-color);
+            font-weight: 600;
+        }
+
+        .legal-compact {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .legal-compact span {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+
         .footer-bottom {
             border-top: 1px solid #374151;
             padding-top: 1rem;
@@ -1663,23 +1691,18 @@
                 margin-bottom: 2rem;
             }
 
-            /* Legal notice mobile */
-            .legal-notice {
-                padding: 3rem 4%;
-            }
-
-            .legal-notice h3 {
-                font-size: 1.4rem;
-                margin-bottom: 2rem;
-            }
-
-            .legal-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .legal-item {
+            /* Footer legal mobile */
+            .footer-legal {
                 padding: 1rem;
+                margin: 1.5rem 0;
+            }
+            
+            .footer-legal h4 {
+                font-size: 0.9rem;
+            }
+            
+            .legal-compact span {
+                font-size: 0.75rem;
             }
 
             /* Sticky CTA mobile */
@@ -2030,11 +2053,6 @@
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-header">
-                        <div class="testimonial-avatar">
-                            <div class="avatar-circle woman-1">
-                                <span class="avatar-emoji">👩</span>
-                            </div>
-                        </div>
                         <div class="testimonial-info">
                             <h4>田中様（42歳・会社員）</h4>
                             <p>中学生・小学生の2児の母</p>
@@ -2066,11 +2084,6 @@
 
                 <div class="testimonial-card">
                     <div class="testimonial-header">
-                        <div class="testimonial-avatar">
-                            <div class="avatar-circle woman-2">
-                                <span class="avatar-emoji">👩‍💼</span>
-                            </div>
-                        </div>
                         <div class="testimonial-info">
                             <h4>佐藤様（39歳・パート）</h4>
                             <p>小学生の3児の母</p>
@@ -2102,11 +2115,6 @@
 
                 <div class="testimonial-card">
                     <div class="testimonial-header">
-                        <div class="testimonial-avatar">
-                            <div class="avatar-circle woman-3">
-                                <span class="avatar-emoji">👩‍💻</span>
-                            </div>
-                        </div>
                         <div class="testimonial-info">
                             <h4>鈴木様（44歳・自営業）</h4>
                             <p>中学生・高校生の2児の母</p>
@@ -2157,54 +2165,26 @@
         </div>
     </section>
 
-    <!-- Legal Notice -->
-    <section class="legal-notice">
-        <div class="container">
-            <h3>特定商取引法に基づく表記</h3>
-            <div class="legal-content">
-                <div class="legal-grid">
-                    <div class="legal-item">
-                        <dt>事業者名</dt>
-                        <dd>仲田亮平（個人事業主）</dd>
-                    </div>
-                    <div class="legal-item">
-                        <dt>所在地</dt>
-                        <dd>※お申し込み後にお知らせいたします</dd>
-                    </div>
-                    <div class="legal-item">
-                        <dt>電話番号</dt>
-                        <dd>※お申し込み後にお知らせいたします</dd>
-                    </div>
-                    <div class="legal-item">
-                        <dt>メールアドレス</dt>
-                        <dd>※お申し込み後にお知らせいたします</dd>
-                    </div>
-                    <div class="legal-item">
-                        <dt>サービス内容</dt>
-                        <dd>ファイナンシャルプランニング相談・資産形成コンサルティング</dd>
-                    </div>
-                    <div class="legal-item">
-                        <dt>料金</dt>
-                        <dd>初回相談無料、継続サポートは個別にご案内</dd>
-                    </div>
-                    <div class="legal-item">
-                        <dt>お支払い方法</dt>
-                        <dd>銀行振込、クレジットカード決済</dd>
-                    </div>
-                    <div class="legal-item">
-                        <dt>キャンセルポリシー</dt>
-                        <dd>相談日の24時間前まで変更・キャンセル可能</dd>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <h3>お金は幸せのチケット｜仲田亮平FP</h3>
             <p>あなたの「本当に叶えたいこと」から始める、優しい家計見直し</p>
+            
+            <!-- 特定商取引法に基づく表記 -->
+            <div class="footer-legal">
+                <h4>特定商取引法に基づく表記</h4>
+                <div class="legal-compact">
+                    <span>事業者：仲田亮平（個人事業主）</span>
+                    <span>サービス：ファイナンシャルプランニング相談・資産形成コンサルティング</span>
+                    <span>料金：初回相談無料、継続サポートは個別にご案内</span>
+                    <span>お支払い：銀行振込、クレジットカード決済</span>
+                    <span>キャンセル：相談日の24時間前まで変更・キャンセル可能</span>
+                    <span>※詳細情報はお申し込み後にお知らせいたします</span>
+                </div>
+            </div>
+            
             <div class="footer-bottom">
                 <p>&copy; 2024 仲田亮平FP. All rights reserved.</p>
             </div>
