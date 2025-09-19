@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC画像テスト</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            padding: 20px; 
+            background: #f0f0f0; 
+        }
+        .test { 
+            margin: 20px 0; 
+            padding: 20px; 
+            background: white; 
+            border-radius: 10px; 
+            border: 2px solid #ddd;
+        }
+        img { 
+            max-width: 300px; 
+            height: auto; 
+            margin: 10px; 
+            border: 3px solid #ccc; 
+            display: block;
+        }
+        .success { border-color: green !important; }
+        .error { 
+            border-color: red !important; 
+            background: #ffe6e6;
+        }
+        .timestamp {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🖥️ PC画像表示テスト</h1>
+    
+    <div class="timestamp">
+        テスト実行時刻: <span id="timestamp"></span>
+    </div>
+    
+    <div class="test">
+        <h2>PC用画像（英語ファイル名）</h2>
+        
+        <h3>STEP 1 PC</h3>
+        <img src="./素材/step1-pc.png" alt="Step 1 PC" onload="this.className='success'; console.log('✅ step1-pc.png 読み込み成功')" onerror="this.className='error'; console.error('❌ step1-pc.png 読み込み失敗')">
+        <p>パス: ./素材/step1-pc.png</p>
+        
+        <h3>STEP 2 PC</h3>
+        <img src="./素材/step2-pc.png" alt="Step 2 PC" onload="this.className='success'; console.log('✅ step2-pc.png 読み込み成功')" onerror="this.className='error'; console.error('❌ step2-pc.png 読み込み失敗')">
+        <p>パス: ./素材/step2-pc.png</p>
+        
+        <h3>STEP 3 PC</h3>
+        <img src="./素材/step3-pc.png" alt="Step 3 PC" onload="this.className='success'; console.log('✅ step3-pc.png 読み込み成功')" onerror="this.className='error'; console.error('❌ step3-pc.png 読み込み失敗')">
+        <p>パス: ./素材/step3-pc.png</p>
+        
+        <h3>GOAL PC</h3>
+        <img src="./素材/goal-pc.png" alt="Goal PC" onload="this.className='success'; console.log('✅ goal-pc.png 読み込み成功')" onerror="this.className='error'; console.error('❌ goal-pc.png 読み込み失敗')">
+        <p>パス: ./素材/goal-pc.png</p>
+    </div>
+    
+    <div class="test">
+        <h2>PC用画像（日本語ファイル名・参考）</h2>
+        
+        <h3>STEP 1 PC（日本語）</h3>
+        <img src="./素材/PC用【責めない】現状分析.png" alt="Step 1 PC JP" onload="this.className='success'; console.log('✅ 日本語ファイル名 読み込み成功')" onerror="this.className='error'; console.error('❌ 日本語ファイル名 読み込み失敗')">
+        <p>パス: ./素材/PC用【責めない】現状分析.png</p>
+    </div>
+    
+    <div class="test">
+        <h2>Picture要素テスト（メインページと同じ）</h2>
+        
+        <picture>
+            <source media="(min-width: 1024px)" srcset="./素材/step1-pc.png">
+            <source media="(min-width: 769px)" srcset="./素材/step1-tablet.png">
+            <img src="./素材/step1-mobile.png" alt="レスポンシブ画像" style="max-width: 300px; border: 3px solid purple;" onload="this.style.borderColor='green'; console.log('✅ Picture要素 読み込み成功')" onerror="this.style.borderColor='red'; console.error('❌ Picture要素 読み込み失敗')">
+        </picture>
+        <p>画面幅1024px以上でPC画像、769px以上でタブレット画像、それ以下でモバイル画像</p>
+    </div>
+    
+    <script>
+        document.getElementById('timestamp').textContent = new Date().toLocaleString();
+        
+        console.log('=== PC画像テスト開始 ===');
+        console.log('現在の画面幅:', window.innerWidth);
+        console.log('UserAgent:', navigator.userAgent);
+        
+        // 5秒後にまとめて結果表示
+        setTimeout(() => {
+            const images = document.querySelectorAll('img');
+            let success = 0, error = 0;
+            images.forEach((img, index) => {
+                if (img.className === 'success' || img.style.borderColor === 'green') {
+                    success++;
+                } else if (img.className === 'error' || img.style.borderColor === 'red') {
+                    error++;
+                }
+            });
+            console.log(`=== 結果: 成功${success}個, 失敗${error}個 ===`);
+        }, 5000);
+    </script>
+</body>
+</html>
