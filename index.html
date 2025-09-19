@@ -711,6 +711,40 @@
         .step-benefits li:nth-child(2) { transition-delay: 0.2s; }
         .step-benefits li:nth-child(3) { transition-delay: 0.3s; }
 
+        /* GOAL専用スタイル */
+        .goal-container {
+            margin-top: 3rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .goal-block {
+            max-width: 400px;
+            background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+            border: 2px solid var(--secondary-color);
+        }
+
+        .goal-number {
+            background: var(--gradient-secondary);
+            color: white;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .goal-block .step-title {
+            color: #92400e;
+            font-weight: 700;
+        }
+
+        .goal-block .step-description {
+            color: #78350f;
+        }
+
+        .goal-block:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 60px rgba(245, 158, 11, 0.3);
+        }
+
         /* STEP画像のレスポンシブ対応 */
         @media (max-width: 768px) {
             .steps-container {
@@ -724,6 +758,10 @@
             
             .step-photo {
                 max-width: 240px;
+            }
+            
+            .goal-block {
+                max-width: 350px;
             }
         }
 
@@ -740,6 +778,10 @@
             
             .step-title {
                 font-size: 1.1rem;
+            }
+            
+            .goal-block {
+                max-width: 300px;
             }
         }
 
@@ -1900,31 +1942,21 @@
                 </div>
             </div>
 
-            <div class="feature-section reverse">
-                <div class="feature-content">
-                    <div class="feature-text">
-                        <div class="feature-badge">GOAL</div>
-                        <h3>【2,000万円達成】継続伴走</h3>
-                        <p>「お金は幸せのチケット」の信念のもと、資産2,000万円達成まで寄り添い続けます。一人じゃないという安心感を大切にします。</p>
-                        <ul class="feature-benefits">
+            <!-- GOAL ブロック形式 -->
+            <div class="goal-container">
+                <div class="step-block goal-block">
+                    <div class="step-image">
+                        <img src="素材/【2,000万円達成】継続伴走.png" alt="2,000万円達成継続伴走" class="step-photo">
+                    </div>
+                    <div class="step-content">
+                        <div class="step-number goal-number">GOAL</div>
+                        <h3 class="step-title">【2,000万円達成】継続伴走</h3>
+                        <p class="step-description">「お金は幸せのチケット」の信念のもと、資産2,000万円達成まで寄り添い続けます。一人じゃないという安心感を大切にします。</p>
+                        <ul class="step-benefits">
                             <li>✅ 目標達成まで長期サポート</li>
                             <li>✅ 心の支えとなるLINE相談</li>
                             <li>✅ 人生の変化に応じた軌道修正</li>
                         </ul>
-                    </div>
-                    <div class="feature-image">
-                        <div class="feature-visual goal">
-                            <div class="visual-icon">🎯</div>
-                            <div class="goal-target">
-                                <div class="target-circle"></div>
-                                <div class="target-amount">2,000万円</div>
-                                <div class="achievement-stars">
-                                    <span>⭐</span>
-                                    <span>⭐</span>
-                                    <span>⭐</span>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
