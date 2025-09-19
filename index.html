@@ -619,15 +619,15 @@
         /* STEPブロック形式のスタイル */
         .steps-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
             margin-top: 3rem;
         }
 
         .step-block {
             background: white;
             border-radius: 20px;
-            padding: 2rem;
+            padding: 1.5rem;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             opacity: 0.4;
@@ -652,7 +652,7 @@
 
         .step-photo {
             width: 100%;
-            max-width: 280px;
+            max-width: 240px;
             height: auto;
             border-radius: 15px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
@@ -747,25 +747,7 @@
             box-shadow: 0 25px 60px rgba(245, 158, 11, 0.3);
         }
 
-        /* STEP画像のレスポンシブ対応 */
-        @media (max-width: 768px) {
-            .steps-container {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .step-block {
-                padding: 1.5rem;
-            }
-            
-            .step-photo {
-                max-width: 240px;
-            }
-            
-            .goal-block {
-                max-width: 350px;
-            }
-        }
+        /* STEP画像 - 統一表示 */
 
         @media (max-width: 480px) {
             .step-block {
