@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>超シンプル画像テスト</title>
+    <style>
+        img { 
+            max-width: 300px; 
+            border: 5px solid red; 
+            margin: 20px; 
+            display: block;
+        }
+        .success { border-color: green; }
+    </style>
+</head>
+<body>
+    <h1>超シンプル画像テスト</h1>
+    
+    <h2>ルート直下の画像</h2>
+    <img src="test-image.png" alt="テスト画像" onload="this.className='success'; console.log('✅ ルート画像成功')" onerror="console.error('❌ ルート画像失敗')">
+    
+    <h2>素材フォルダの画像</h2>
+    <img src="素材/step1-mobile.png" alt="素材画像" onload="this.className='success'; console.log('✅ 素材画像成功')" onerror="console.error('❌ 素材画像失敗')">
+    
+    <h2>./付きパス</h2>
+    <img src="./素材/step1-mobile.png" alt="ドット付き素材画像" onload="this.className='success'; console.log('✅ ドット付き素材画像成功')" onerror="console.error('❌ ドット付き素材画像失敗')">
+    
+    <script>
+        console.log('現在のベースURL:', window.location.href);
+    </script>
+</body>
+</html>
