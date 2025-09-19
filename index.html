@@ -600,6 +600,39 @@
             align-items: center;
         }
 
+        .feature-step-image {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-step-image:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* STEP画像のレスポンシブ対応 */
+        @media (max-width: 768px) {
+            .feature-step-image {
+                max-width: 300px;
+                border-radius: 10px;
+            }
+            
+            .feature-image {
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .feature-step-image {
+                max-width: 250px;
+                border-radius: 8px;
+            }
+        }
+
         .feature-visual {
             width: 300px;
             height: 250px;
@@ -1709,15 +1742,7 @@
             <div class="feature-section">
                 <div class="feature-content">
                     <div class="feature-image">
-                        <div class="feature-visual analysis">
-                            <div class="visual-icon">📊</div>
-                            <div class="visual-elements">
-                                <div class="chart-bar" style="height: 60%;"></div>
-                                <div class="chart-bar" style="height: 80%;"></div>
-                                <div class="chart-bar" style="height: 45%;"></div>
-                                <div class="chart-bar" style="height: 95%;"></div>
-                            </div>
-                        </div>
+                        <img src="素材/【責めない】現状分析.png" alt="責めない現状分析" class="feature-step-image">
                     </div>
                     <div class="feature-text">
                         <div class="feature-badge">STEP 1</div>
@@ -1745,18 +1770,7 @@
                         </ul>
                     </div>
                     <div class="feature-image">
-                        <div class="feature-visual steps">
-                            <div class="visual-icon">📈</div>
-                            <div class="step-path">
-                                <div class="step-point active"></div>
-                                <div class="step-line"></div>
-                                <div class="step-point active"></div>
-                                <div class="step-line"></div>
-                                <div class="step-point current"></div>
-                                <div class="step-line"></div>
-                                <div class="step-point"></div>
-                            </div>
-                        </div>
+                        <img src="素材/【急がせない】段階的改善.png" alt="急がせない段階的改善" class="feature-step-image">
                     </div>
                 </div>
             </div>
@@ -1764,18 +1778,7 @@
             <div class="feature-section">
                 <div class="feature-content">
                     <div class="feature-image">
-                        <div class="feature-visual investment">
-                            <div class="visual-icon">💰</div>
-                            <div class="investment-growth">
-                                <div class="growth-line"></div>
-                                <div class="growth-points">
-                                    <div class="growth-point" style="bottom: 20%;"></div>
-                                    <div class="growth-point" style="bottom: 35%;"></div>
-                                    <div class="growth-point" style="bottom: 55%;"></div>
-                                    <div class="growth-point" style="bottom: 80%;"></div>
-                                </div>
-                            </div>
-                        </div>
+                        <img src="素材/【売り込まない】投資サポート.png" alt="売り込まない投資サポート" class="feature-step-image">
                     </div>
                     <div class="feature-text">
                         <div class="feature-badge">STEP 3</div>
