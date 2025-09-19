@@ -614,22 +614,132 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
 
+        /* STEPブロック形式のスタイル */
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step-block {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0.4;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .step-block.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .step-block:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .step-image {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-photo {
+            width: 100%;
+            max-width: 280px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-content {
+            text-align: center;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .step-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .step-description {
+            font-size: 0.95rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-benefits {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .step-benefits li {
+            padding: 0.3rem 0;
+            color: var(--dark-color);
+            font-size: 0.9rem;
+            opacity: 0.4;
+            transform: translateX(-20px);
+            transition: all 0.3s ease;
+        }
+
+        .step-block.visible .step-benefits li {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .step-benefits li:nth-child(1) { transition-delay: 0.1s; }
+        .step-benefits li:nth-child(2) { transition-delay: 0.2s; }
+        .step-benefits li:nth-child(3) { transition-delay: 0.3s; }
+
         /* STEP画像のレスポンシブ対応 */
         @media (max-width: 768px) {
-            .feature-step-image {
-                max-width: 300px;
-                border-radius: 10px;
+            .steps-container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
             
-            .feature-image {
-                padding: 1rem;
+            .step-block {
+                padding: 1.5rem;
+            }
+            
+            .step-photo {
+                max-width: 240px;
             }
         }
 
         @media (max-width: 480px) {
-            .feature-step-image {
-                max-width: 250px;
-                border-radius: 8px;
+            .step-block {
+                padding: 1.2rem;
+                border-radius: 15px;
+            }
+            
+            .step-photo {
+                max-width: 200px;
+                border-radius: 10px;
+            }
+            
+            .step-title {
+                font-size: 1.1rem;
             }
         }
 
@@ -1739,52 +1849,49 @@
                 <p>10年の実績で培った「責めない・急がせない・売り込まない」3つの約束</p>
             </div>
             
-            <div class="feature-section">
-                <div class="feature-content">
-                    <div class="feature-image">
-                        <img src="素材/【責めない】現状分析.png" alt="責めない現状分析" class="feature-step-image">
+            <!-- STEP ブロック形式 -->
+            <div class="steps-container">
+                <div class="step-block">
+                    <div class="step-image">
+                        <img src="素材/【責めない】現状分析.png" alt="責めない現状分析" class="step-photo">
                     </div>
-                    <div class="feature-text">
-                        <div class="feature-badge">STEP 1</div>
-                        <h3>【責めない】現状分析</h3>
-                        <p>「無駄遣いを責める」のではなく「仕組みの問題」として捉え、10年の経験で培った優しいアプローチで現状を見える化します。</p>
-                        <ul class="feature-benefits">
+                    <div class="step-content">
+                        <div class="step-number">STEP 1</div>
+                        <h3 class="step-title">【責めない】現状分析</h3>
+                        <p class="step-description">「無駄遣いを責める」のではなく「仕組みの問題」として捉え、10年の経験で培った優しいアプローチで現状を見える化します。</p>
+                        <ul class="step-benefits">
                             <li>✅ 罪悪感を感じない家計分析</li>
                             <li>✅ あなたの価値観を重視した見直し</li>
                             <li>✅ 実現可能な改善プランの提案</li>
                         </ul>
                     </div>
                 </div>
-            </div>
 
-            <div class="feature-section reverse">
-                <div class="feature-content">
-                    <div class="feature-text">
-                        <div class="feature-badge">STEP 2</div>
-                        <h3>【急がせない】段階的改善</h3>
-                        <p>急激な変化は続きません。あなたのペースに合わせて段階的に改善し、無理なく続けられる仕組みを一緒に作ります。</p>
-                        <ul class="feature-benefits">
+                <div class="step-block">
+                    <div class="step-image">
+                        <img src="素材/【急がせない】段階的改善.png" alt="急がせない段階的改善" class="step-photo">
+                    </div>
+                    <div class="step-content">
+                        <div class="step-number">STEP 2</div>
+                        <h3 class="step-title">【急がせない】段階的改善</h3>
+                        <p class="step-description">急激な変化は続きません。あなたのペースに合わせて段階的に改善し、無理なく続けられる仕組みを一緒に作ります。</p>
+                        <ul class="step-benefits">
                             <li>✅ 月単位での小さな改善積み重ね</li>
                             <li>✅ 生活スタイルを尊重した提案</li>
                             <li>✅ 挫折しない継続サポート</li>
                         </ul>
                     </div>
-                    <div class="feature-image">
-                        <img src="素材/【急がせない】段階的改善.png" alt="急がせない段階的改善" class="feature-step-image">
-                    </div>
                 </div>
-            </div>
 
-            <div class="feature-section">
-                <div class="feature-content">
-                    <div class="feature-image">
-                        <img src="素材/【売り込まない】投資サポート.png" alt="売り込まない投資サポート" class="feature-step-image">
+                <div class="step-block">
+                    <div class="step-image">
+                        <img src="素材/【売り込まない】投資サポート.png" alt="売り込まない投資サポート" class="step-photo">
                     </div>
-                    <div class="feature-text">
-                        <div class="feature-badge">STEP 3</div>
-                        <h3>【売り込まない】投資サポート</h3>
-                        <p>投資商品の売り込みは一切しません。10年の投資経験から、あなたに本当に合った方法だけを分かりやすくお伝えします。</p>
-                        <ul class="feature-benefits">
+                    <div class="step-content">
+                        <div class="step-number">STEP 3</div>
+                        <h3 class="step-title">【売り込まない】投資サポート</h3>
+                        <p class="step-description">投資商品の売り込みは一切しません。10年の投資経験から、あなたに本当に合った方法だけを分かりやすくお伝えします。</p>
+                        <ul class="step-benefits">
                             <li>✅ 商品ありきでない中立的なアドバイス</li>
                             <li>✅ リスク説明を最重視</li>
                             <li>✅ 継続できる投資額の設定</li>
@@ -2100,13 +2207,13 @@
         // Observe elements for animation
         document.addEventListener('DOMContentLoaded', () => {
             const animateElements = document.querySelectorAll(
-                '.section-header, .credential-card, .video-introduction, .philosophy, .problem-card, .feature-section, .benefits-list li, .testimonial-card, .cta-content h2'
+                '.section-header, .credential-card, .video-introduction, .philosophy, .problem-card, .step-block, .feature-section, .benefits-list li, .testimonial-card, .cta-content h2'
             );
             
             animateElements.forEach((el, index) => {
                 // セクション毎にディレイをリセット
                 const section = el.closest('section');
-                const sectionElements = section ? section.querySelectorAll('.section-header, .credential-card, .video-introduction, .philosophy, .problem-card, .feature-section, .benefits-list li, .testimonial-card, .cta-content h2') : [el];
+                const sectionElements = section ? section.querySelectorAll('.section-header, .credential-card, .video-introduction, .philosophy, .problem-card, .step-block, .feature-section, .benefits-list li, .testimonial-card, .cta-content h2') : [el];
                 const indexInSection = Array.from(sectionElements).indexOf(el);
                 el.style.transitionDelay = `${indexInSection * 0.1}s`;
                 observer.observe(el);
